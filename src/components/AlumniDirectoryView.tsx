@@ -212,9 +212,20 @@ export const AlumniDirectoryView: React.FC<AlumniDirectoryViewProps> = ({
               className="w-full bg-[#0F284E] text-xs text-slate-200 rounded-lg border border-slate-700 py-2 px-2.5 focus:outline-none focus:border-amber-400"
             >
               <option value="All">All Graduation Years</option>
-              {availableYears.map(yr => (
-                <option key={yr} value={yr.toString()}>{yr} {yr === 1999 ? '(1st Batch)' : ''}</option>
-              ))}
+              {availableYears.map(yr => {
+                let badge = '';
+                if (yr === 1999) badge = ' (1st Diploma Batch)';
+                else if (yr === 2000) badge = ' (2nd Diploma Batch)';
+                else if (yr === 2001) badge = ' (3rd Diploma Batch)';
+                else if (yr === 2002) badge = ' (1st Degree Batch)';
+                else if (yr === 2003) badge = ' (2nd Degree Batch)';
+                else if (yr === 2004) badge = ' (3rd Degree Batch)';
+                else if (yr === 2026) badge = ' (25th Degree Batch / Senior)';
+                else if (yr >= 2005 && yr <= 2025) badge = ` (${yr - 2001}th Degree Batch)`;
+                return (
+                  <option key={yr} value={yr.toString()}>{yr}{badge}</option>
+                );
+              })}
             </select>
           </div>
 

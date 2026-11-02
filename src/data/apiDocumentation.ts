@@ -110,8 +110,12 @@ export const API_DOCUMENTATION: ApiEndpointDoc[] = [
       success: true,
       coveragePeriod: { startYear: 1999, latestYear: 2024 },
       timeline: [
-        { year: 1999, diplomaGraduates: 142, bachelors: 0, total: 142, notableMilestone: 'Inaugural Diploma Graduation Batch' },
-        { year: 2004, diplomaGraduates: 98, bachelors: 115, total: 213, notableMilestone: 'Health Sciences College Induction' },
+        { year: 1999, diplomaGraduates: 142, bachelors: 0, total: 142, notableMilestone: 'Inaugural 1st Diploma Graduation Batch' },
+        { year: 2000, diplomaGraduates: 168, bachelors: 0, total: 168, notableMilestone: '2nd Diploma Graduation Batch' },
+        { year: 2001, diplomaGraduates: 195, bachelors: 0, total: 195, notableMilestone: '3rd Diploma Graduation Batch' },
+        { year: 2002, diplomaGraduates: 210, bachelors: 85, total: 295, notableMilestone: 'Inaugural 1st Bachelor\'s Degree Batch' },
+        { year: 2003, diplomaGraduates: 220, bachelors: 120, total: 340, notableMilestone: '2nd Bachelor\'s Degree Batch' },
+        { year: 2004, diplomaGraduates: 98, bachelors: 165, total: 263, notableMilestone: '3rd Degree Batch & Health Sciences Commencement' },
         { year: 2016, diplomaGraduates: 15, bachelors: 340, masters: 45, total: 400, notableMilestone: 'Postgraduate Expansion' }
       ]
     }

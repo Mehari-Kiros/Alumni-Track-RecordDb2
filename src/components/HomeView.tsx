@@ -63,7 +63,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ metrics, onNavigate }) => {
               A centralized digital repository and analytical intelligence dashboard designed to monitor,
               analyze, and present the educational and professional track records of graduates across
               the College of Engineering, College of Health Sciences, and College of Business & Social Studies,
-              beginning from the historic 1999 inaugural Diploma batch through to subsequent and future cohorts.
+              beginning from the historic 1999 inaugural Diploma batch, the 2002 inaugural Degree batch, through to subsequent and future cohorts.
             </p>
 
           {/* Action Buttons */}
@@ -143,9 +143,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ metrics, onNavigate }) => {
         </div>
 
         <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-800 shadow-md">
-          <p className="text-[11px] font-semibold text-indigo-400 uppercase tracking-wider">1999 First Batch</p>
-          <p className="text-2xl font-bold text-white mt-1">{metrics.totalDiploma} Dip</p>
-          <span className="text-[10px] text-amber-400/90 font-medium">Historical Baseline</span>
+          <p className="text-[11px] font-semibold text-indigo-400 uppercase tracking-wider">Historical Cohorts</p>
+          <p className="text-xl font-bold text-white mt-1">{metrics.totalDiploma} Dip / {metrics.totalBachelors} Deg</p>
+          <span className="text-[10px] text-amber-400/90 font-medium">1999 Dip • 2002 Deg 1st Batches</span>
         </div>
 
         <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-800 shadow-md">

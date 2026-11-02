@@ -24,9 +24,9 @@ import { AboutSystemView } from './components/AboutSystemView';
 import { SocialAndConnectBar } from './components/SocialAndConnectBar';
 
 const STORAGE_KEYS = {
-  ALUMNI: 'edu_atrd_alumni_data_v1',
-  HISTORY: 'edu_atrd_import_history_v1',
-  AUDIT: 'edu_atrd_audit_logs_v1',
+  ALUMNI: 'edu_atrd_alumni_data_v3',
+  HISTORY: 'edu_atrd_import_history_v3',
+  AUDIT: 'edu_atrd_audit_logs_v3',
   ROLE: 'edu_atrd_user_role_v1'
 };
 
@@ -311,7 +311,7 @@ export default function App() {
           {/* Historical Baseline Metadata & Reset */}
           <div className="mt-4 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
             <div className="flex items-center gap-2">
-              <span>Historical Baseline: <strong>1999 1st Diploma Batch</strong></span>
+              <span>Historical Milestones: <strong>1999 (1st Diploma Batch)</strong> • <strong>2002 (1st Degree Batch)</strong></span>
               <span>•</span>
               <span>Accredited Tri-College Structure</span>
               <span>•</span>
@@ -319,7 +319,7 @@ export default function App() {
             </div>
             <button
               onClick={() => {
-                if (window.confirm('Reset database to pristine historical baseline seed data (1999–2024)?')) {
+                if (window.confirm('Reset database to pristine historical baseline seed data (1999 1st Diploma, 2002 1st Degree)?')) {
                   localStorage.removeItem(STORAGE_KEYS.ALUMNI);
                   localStorage.removeItem(STORAGE_KEYS.HISTORY);
                   localStorage.removeItem(STORAGE_KEYS.AUDIT);

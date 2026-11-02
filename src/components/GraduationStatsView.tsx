@@ -200,7 +200,24 @@ export const GraduationStatsView: React.FC<GraduationStatsViewProps> = ({ alumni
                       {count}
                     </span>
                     {yr === 1999 && (
-                      <span className="text-[9px] uppercase tracking-tighter opacity-80 font-bold">1st</span>
+                      <span className="text-[9px] uppercase tracking-tighter opacity-90 font-bold bg-amber-500/30 px-1 rounded">1st Dip</span>
+                    )}
+                    {yr === 2000 && (
+                      <span className="text-[9px] uppercase tracking-tighter opacity-90 font-bold bg-blue-500/30 px-1 rounded">2nd Dip</span>
+                    )}
+                    {yr === 2001 && (
+                      <span className="text-[9px] uppercase tracking-tighter opacity-90 font-bold bg-blue-500/30 px-1 rounded">3rd Dip</span>
+                    )}
+                    {yr === 2002 && (
+                      <span className="text-[9px] uppercase tracking-tighter opacity-90 font-bold bg-emerald-500/40 text-emerald-300 px-1 rounded">1st Deg</span>
+                    )}
+                    {yr === 2003 && (
+                      <span className="text-[9px] uppercase tracking-tighter opacity-90 font-bold bg-teal-500/30 text-teal-300 px-1 rounded">2nd Deg</span>
+                    )}
+                    {yr >= 2004 && yr <= 2026 && (
+                      <span className="text-[9px] uppercase tracking-tighter opacity-80 font-medium bg-slate-700/50 px-1 rounded">
+                        {yr - 2001}th Deg
+                      </span>
                     )}
                   </button>
                 );
@@ -212,13 +229,58 @@ export const GraduationStatsView: React.FC<GraduationStatsViewProps> = ({ alumni
           <div className="bg-gradient-to-r from-[#071326] via-[#0A192F] to-[#122B55] border border-amber-500/30 rounded-2xl p-6 text-white shadow-xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold">
                     Batch Year: {selectedYear}
                   </span>
                   {selectedYear === 1999 && (
-                    <span className="text-xs text-amber-400 font-semibold">
-                      ★ Historical Inaugural Diploma Batch of Ethiopian Defence University
+                    <span className="text-xs text-amber-400 font-semibold bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">
+                      ★ Historical Inaugural Diploma Batch (1st Diploma Batch)
+                    </span>
+                  )}
+                  {selectedYear === 2000 && (
+                    <span className="text-xs text-blue-400 font-semibold bg-blue-950/40 px-2 py-0.5 rounded border border-blue-500/30">
+                      ★ 2nd Diploma Graduate Batch
+                    </span>
+                  )}
+                  {selectedYear === 2001 && (
+                    <span className="text-xs text-blue-400 font-semibold bg-blue-950/40 px-2 py-0.5 rounded border border-blue-500/30">
+                      ★ 3rd Diploma Graduate Batch
+                    </span>
+                  )}
+                  {selectedYear === 2002 && (
+                    <span className="text-xs text-emerald-400 font-semibold bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/30">
+                      ★ Historical Inaugural Bachelor&apos;s Degree Batch (1st Degree Batch)
+                    </span>
+                  )}
+                  {selectedYear === 2003 && (
+                    <span className="text-xs text-teal-400 font-semibold bg-teal-950/40 px-2 py-0.5 rounded border border-teal-500/30">
+                      ★ 2nd Bachelor&apos;s Degree Batch
+                    </span>
+                  )}
+                  {selectedYear === 2004 && (
+                    <span className="text-xs text-teal-400 font-semibold bg-teal-950/40 px-2 py-0.5 rounded border border-teal-500/30">
+                      ★ 3rd Bachelor&apos;s Degree Batch (Health Sciences Inaugural Cohort)
+                    </span>
+                  )}
+                  {selectedYear === 2008 && (
+                    <span className="text-xs text-indigo-400 font-semibold bg-indigo-950/40 px-2 py-0.5 rounded border border-indigo-500/30">
+                      ★ 7th Degree Batch & Inaugural Postgraduate Master&apos;s Cohort
+                    </span>
+                  )}
+                  {selectedYear === 2016 && (
+                    <span className="text-xs text-purple-400 font-semibold bg-purple-950/40 px-2 py-0.5 rounded border border-purple-500/30">
+                      ★ 15th Degree Batch & Inaugural Doctoral (PhD) Cohort
+                    </span>
+                  )}
+                  {selectedYear === 2026 && (
+                    <span className="text-xs text-amber-400 font-semibold bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">
+                      ★ 25th Bachelor&apos;s Degree Batch (Contemporary Senior Graduating Class)
+                    </span>
+                  )}
+                  {selectedYear > 2004 && selectedYear !== 2008 && selectedYear !== 2016 && selectedYear !== 2026 && (
+                    <span className="text-xs text-slate-300 font-medium bg-slate-800/60 px-2 py-0.5 rounded border border-slate-700">
+                      ★ {selectedYear - 2001}th Bachelor&apos;s Degree Batch
                     </span>
                   )}
                 </div>

@@ -149,10 +149,10 @@ export const MainDashboardView: React.FC<MainDashboardViewProps> = ({ alumni, on
             aria-label="Filter by Qualification"
           >
             <option value="All">All Qualifications</option>
-            <option value="Diploma">Diploma (from 1999)</option>
-            <option value="Bachelor's Degree">Bachelor's Degree</option>
-            <option value="Master's Degree">Master's Degree</option>
-            <option value="PhD">PhD</option>
+            <option value="Diploma">Diploma (1st Batch 1999)</option>
+            <option value="Bachelor's Degree">Bachelor's Degree (1st Batch 2002)</option>
+            <option value="Master's Degree">Master's Degree (from 2008)</option>
+            <option value="PhD">PhD (from 2016)</option>
           </select>
 
           <select
@@ -255,14 +255,14 @@ export const MainDashboardView: React.FC<MainDashboardViewProps> = ({ alumni, on
           <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-800 shadow-md">
             <p className="text-[11px] font-semibold text-indigo-400 uppercase tracking-wider">Diploma Graduates</p>
             <p className="text-2xl sm:text-3xl font-extrabold text-white mt-1">{metrics.totalDiploma.toLocaleString()}</p>
-            <p className="text-[10px] text-slate-400 mt-1">Includes 1999 founding batch</p>
+            <p className="text-[10px] text-slate-400 mt-1">1st batch 1999, 2nd 2000, 3rd 2001...</p>
           </div>
 
           {/* 6. Bachelor's Degree */}
           <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-800 shadow-md">
             <p className="text-[11px] font-semibold text-sky-400 uppercase tracking-wider">Bachelor's Degrees</p>
             <p className="text-2xl sm:text-3xl font-extrabold text-white mt-1">{metrics.totalBachelors.toLocaleString()}</p>
-            <p className="text-[10px] text-slate-400 mt-1">BSc, BA, MD programs</p>
+            <p className="text-[10px] text-slate-400 mt-1">1st batch 2002, 2nd 2003, 3rd 2004...</p>
           </div>
 
           {/* 7. Master's Degree */}

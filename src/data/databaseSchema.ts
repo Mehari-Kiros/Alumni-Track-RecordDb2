@@ -219,8 +219,8 @@ VALUES
 -- Step 2: Initialize Qualifications Hierarchy
 INSERT INTO qualifications (level_name, hierarchy_order, description)
 VALUES 
-('Diploma', 1, 'Two to three year foundational qualification (started 1999 first batch)'),
-('Bachelor''s Degree', 2, 'Undergraduate 4-5 year programs (BSc, BA, MD)'),
+('Diploma', 1, 'Two to three year foundational qualification (started 1999 first batch, 2000 second batch, 2001 third batch)'),
+('Bachelor''s Degree', 2, 'Undergraduate 4-5 year programs (started 2002 first degree batch, 2003 second batch, BSc, BA, MD)'),
 ('Master''s Degree', 3, 'Postgraduate advanced degrees (MSc, MA)'),
 ('PhD', 4, 'Terminal doctorate and doctoral research');
 
