@@ -1,0 +1,8 @@
+{
+  "name": "Ethiopian Defence University - Alumni Track Record Database (EDU-ATRD)",
+  "description": "Centralized digital database and analytics dashboard for managing, monitoring, analyzing, and presenting graduate track records of Ethiopian Defence University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
