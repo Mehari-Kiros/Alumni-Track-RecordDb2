@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Alumnus, CollegeInfo, ImportHistoryItem, AuditLog } from '../types/alumni';
+import type { Alumnus, CollegeInfo, ImportHistoryItem, AuditLog } from '../types/alumni.ts';
 
 export const COLLEGES_METADATA: CollegeInfo[] = [
   {

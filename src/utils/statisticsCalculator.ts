@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Alumnus, CollegeType } from '../types/alumni';
+import type { Alumnus, CollegeType } from '../types/alumni.ts';
 
 export interface DashboardMetrics {
   totalAlumni: number;

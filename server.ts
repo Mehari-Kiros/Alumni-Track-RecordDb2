@@ -190,12 +190,18 @@ app.get('/api/v1/schema.sql', (req, res) => {
   res.send(`${POSTGRESQL_DDL_SCHEMA}\n\n${POSTGRESQL_MIGRATIONS}`);
 });
 
-// Start Express server if running standalone
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'dist')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  });
-}
+// Serve static assets and SPA fallback
+const distPath = path.join(__dirname, 'dist');
+app.use(express.static(distPath));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
+// Start Express server
+const server = app.listen(port, '0.0.0.0', () => {
+  console.log(`EDU-ATRD production server running on http://0.0.0.0:${port}`);
+});
 
 export default app;
+

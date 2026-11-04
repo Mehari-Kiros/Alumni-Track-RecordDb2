@@ -21,7 +21,6 @@ import { DataUploadModule } from './components/DataUploadModule';
 import { ReportsAnalyticsView } from './components/ReportsAnalyticsView';
 import { AdministrationView } from './components/AdministrationView';
 import { AboutSystemView } from './components/AboutSystemView';
-import { SocialAndConnectBar } from './components/SocialAndConnectBar';
 
 const STORAGE_KEYS = {
   ALUMNI: 'edu_atrd_alumni_data_v3',
@@ -275,65 +274,64 @@ export default function App() {
         )}
       </main>
 
-      {/* 4. Institutional Footer */}
-      <footer className="bg-[#050D1A] border-t border-slate-800/80 text-slate-400 text-xs py-8 mt-12 print:hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Online Services, Real Mailto, Google Chat, Verified Social Channels & Real Visitors Counter */}
-          <SocialAndConnectBar variant="footer" className="mb-6" />
+      {/* 4. Institutional Footer (Rendered on other tabs; on Home, HomeView contains the designated copyright baseline) */}
+      {activeTab !== 'home' && (
+        <footer className="bg-[#050D1A] border-t border-slate-800/80 text-slate-400 text-xs py-8 mt-12 print:hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Copyright & Directorate Row */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span>Copyright © {new Date().getFullYear()}</span>
+                <span className="font-serif font-bold text-amber-400">
+                  የኢትዮጵያ መከላከያ ዩኒቨርሲቲ
+                </span>
+                <span className="text-amber-500/50 font-bold">•</span>
+                <span className="font-serif font-bold text-amber-400">
+                  ETHIOPIAN DEFENCE UNIVERSITY
+                </span>
+                <span className="text-slate-600 hidden sm:inline">•</span>
+                <span className="text-slate-300">Alumni Track Record Database (EDU-ATRD)</span>
+              </div>
 
-          {/* Copyright & Directorate Row */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span>Copyright © {new Date().getFullYear()}</span>
-              <span className="font-serif font-bold text-amber-400">
-                የኢትዮጵያ መከላከያ ዩኒቨርሲቲ
-              </span>
-              <span className="text-amber-500/50 font-bold">•</span>
-              <span className="font-serif font-bold text-amber-400">
-                ETHIOPIAN DEFENCE UNIVERSITY
-              </span>
-              <span className="text-slate-600 hidden sm:inline">•</span>
-              <span className="text-slate-300">Alumni Track Record Database (EDU-ATRD)</span>
+              <div className="flex items-center gap-3 text-slate-400 text-xs">
+                <span className="text-amber-300/90 font-medium">
+                  የሬጅስትራርና ምሩቃን ጉዲይ ፅ/ቤት ዲይሬክተር
+                </span>
+                <span className="text-slate-600">|</span>
+                <span className="text-slate-300">
+                  OFFICE OF THE REGISTRAR & ALUMNI AFFAIRS DIRECTORATE
+                </span>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3 text-slate-400 text-xs">
-              <span className="text-amber-300/90 font-medium">
-                የሬጅስትራርና ምሩቃን ጉዲይ ፅ/ቤት ዲይሬክተር
-              </span>
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-300">
-                OFFICE OF THE REGISTRAR & ALUMNI AFFAIRS DIRECTORATE
-              </span>
+            {/* Historical Baseline Metadata & Reset */}
+            <div className="mt-4 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+              <div className="flex items-center gap-2">
+                <span>Historical Milestones: <strong>1999 (1st Diploma Batch)</strong> • <strong>2002 (1st Degree Batch)</strong></span>
+                <span>•</span>
+                <span>Accredited Tri-College Structure</span>
+                <span>•</span>
+                <span>Bishoftu & Addis Ababa, Ethiopia</span>
+              </div>
+              <button
+                onClick={() => {
+                  if (window.confirm('Reset database to pristine historical baseline seed data (1999 1st Diploma, 2002 1st Degree)?')) {
+                    localStorage.removeItem(STORAGE_KEYS.ALUMNI);
+                    localStorage.removeItem(STORAGE_KEYS.HISTORY);
+                    localStorage.removeItem(STORAGE_KEYS.AUDIT);
+                    window.location.reload();
+                  }
+                }}
+                className="text-amber-400/80 hover:text-amber-300 underline"
+              >
+                Reset to Initial Baseline
+              </button>
             </div>
+
           </div>
-
-          {/* Historical Baseline Metadata & Reset */}
-          <div className="mt-4 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
-            <div className="flex items-center gap-2">
-              <span>Historical Milestones: <strong>1999 (1st Diploma Batch)</strong> • <strong>2002 (1st Degree Batch)</strong></span>
-              <span>•</span>
-              <span>Accredited Tri-College Structure</span>
-              <span>•</span>
-              <span>Bishoftu & Addis Ababa, Ethiopia</span>
-            </div>
-            <button
-              onClick={() => {
-                if (window.confirm('Reset database to pristine historical baseline seed data (1999 1st Diploma, 2002 1st Degree)?')) {
-                  localStorage.removeItem(STORAGE_KEYS.ALUMNI);
-                  localStorage.removeItem(STORAGE_KEYS.HISTORY);
-                  localStorage.removeItem(STORAGE_KEYS.AUDIT);
-                  window.location.reload();
-                }
-              }}
-              className="text-amber-400/80 hover:text-amber-300 underline"
-            >
-              Reset to Initial Baseline
-            </button>
-          </div>
-
-        </div>
-      </footer>
+        </footer>
+      )}
 
     </div>
   );
